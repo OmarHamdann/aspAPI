@@ -9,6 +9,11 @@ namespace webAPI.Controllers
 {
     public class ValuesController : ApiController
     {
+
+
+
+
+        // api values 
         // GET api/values
         public IEnumerable<string> Get()
         {
@@ -34,6 +39,14 @@ namespace webAPI.Controllers
         // DELETE api/values/5
         public void Delete(int id)
         {
+        }
+
+        //api archive
+
+        [HttpGet]
+        public HttpResponseMessage Archive(int year, int month, int day)
+        {
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }
 }

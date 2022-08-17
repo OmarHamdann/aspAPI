@@ -19,6 +19,18 @@ namespace webAPI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            //my api
+
+            config.Routes.MapHttpRoute(
+               name: "myRoute",
+               routeTemplate: "api/{controller}/{action}/{year}/{month}/{day}",
+               defaults: new {
+                   mounth = RouteParameter.Optional,
+                   day = RouteParameter.Optional
+
+               }
+           );
         }
     }
 }
