@@ -26,8 +26,13 @@ namespace webAPI
                name: "myRoute",
                routeTemplate: "api/{controller}/{action}/{year}/{month}/{day}",
                defaults: new {
-                   mounth = RouteParameter.Optional,
+                   month = RouteParameter.Optional,
                    day = RouteParameter.Optional
+
+               },
+               constraints: new { 
+                   month=@"\d{0,2}",
+                   day= @"\d{0,2}"
 
                }
            );
