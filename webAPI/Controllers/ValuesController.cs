@@ -7,6 +7,7 @@ using System.Web.Http;
 
 namespace webAPI.Controllers
 {
+    [Route("api/data")]
     public class ValuesController : ApiController
     {
 
@@ -47,6 +48,14 @@ namespace webAPI.Controllers
         public HttpResponseMessage Archive(int year, int month, int day)
         {
             return new HttpResponseMessage(HttpStatusCode.OK);
+        }
+
+
+        [Route("api/data/AddCustomer")]
+        [HttpPost]
+        public void  AddCustomer(string customer)
+        {
+            
         }
     }
 }
