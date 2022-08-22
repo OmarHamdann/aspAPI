@@ -9,31 +9,16 @@ namespace webAPI.Controllers
 {
     public class BooksController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        public string GetBook (string title ,string pages)
         {
-            return "value";
-        }
 
-        // POST api/<controller>
-        public void Post([FromBody] string value)
-        {
+            return string.Format("Title ={0}, Number of pages ={1}", title, pages);
         }
+        
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+       
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
+      
     }
 }
