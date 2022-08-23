@@ -26,10 +26,25 @@ namespace webAPI.Controllers
 
 
         //using model (complex type)
-        public string GetBook(book book)
+        public HttpResponseMessage GetBook(book book)
+        {
+            if (ModelState.IsValid)
+            {
+                return new HttpResponseMessage(HttpStatusCode.OK);
+
+            }
+            else {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+
+            }
+
+           
+        }
+
+        public string PostBook(book book)
         {
 
-            return string.Format("Title ={0}, Number of pages ={1}", book.Title ,book.Pages);
+            return string.Format("Title ={0}, Number of pages ={1}", book.Title, book.Pages);
         }
 
 
